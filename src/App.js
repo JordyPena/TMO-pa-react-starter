@@ -64,7 +64,7 @@ function App() {
         })}
       {/* render form when button is clicked */}
       {showForm === true ? (
-        <form onSubmit={(e) => formSubmitted(e)}>
+        <form className="form-test" onSubmit={(e) => formSubmitted(e)}>
           <label>Recipe Name</label>
           <input
             type="text"
