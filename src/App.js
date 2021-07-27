@@ -44,15 +44,17 @@ function App() {
     <div>
       <h1 className="doNotRemoveMe">Hello world.</h1>
       {/* ^ Do not remove this element ^ */}
-      <h1>My Recipes.</h1>
-      {/* hide no recipes text when recipes exist */}
-      {recipes.length >= 1 ? "" : <p>There are no recipes to list.</p>}
-      {/* remove button when clicked */}
-      {hideAddRecipe === false ? (
-        <button onClick={() => hideButton()}>Add recipe</button>
-      ) : (
-        ""
-      )}
+      <header>
+        <h1>My Recipes.</h1>
+        {/* hide no recipes text when recipes exist */}
+        {recipes.length >= 1 ? "" : <p>There are no recipes to list.</p>}
+        {/* remove button when clicked */}
+        {hideAddRecipe === false ? (
+          <button onClick={() => hideButton()}>Add recipe</button>
+        ) : (
+          ""
+        )}
+      </header>
 
       {/* render my recipes if recipes exist*/}
       {recipes.length >= 1 &&
@@ -66,7 +68,7 @@ function App() {
       {/* render form when button is clicked */}
       {showForm === true ? (
         <form className="form-test" onSubmit={(e) => formSubmitted(e)}>
-          Recipe Name  
+          Recipe Name
           <input
             type="text"
             value={recipeName}
@@ -74,8 +76,8 @@ function App() {
             name="Recipe Name"
             placeholder="Recipe Name"
             required
-            />
-            Recipe Instructions
+          />
+          Recipe Instructions
           <input
             type="text"
             value={recipeInstructions}
