@@ -45,7 +45,7 @@ function App() {
       <h1 className="doNotRemoveMe">Hello world.</h1>
       {/* ^ Do not remove this element ^ */}
       <header>
-        <h1>My Recipes.</h1>
+        <h1>My Recipes</h1>
         {/* hide no recipes text when recipes exist */}
         {recipes.length >= 1 ? "" : <p>There are no recipes to list.</p>}
         {/* remove button when clicked */}
