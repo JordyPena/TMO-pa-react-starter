@@ -43,13 +43,13 @@ function App() {
   return (
     <div>
       <header>
-       <h1 className="doNotRemoveMe">My Recipes.</h1>
+       <h1 className="doNotRemoveMe">Hello World.</h1>
         {/* ^ Do not remove this element ^ */}
-
-      </header>
-
+        <h1>My Recipes.</h1>
         {/* hide no recipes text when recipes exist */}
         {recipes.length >= 1 ? "" : <p>There are no recipes to list.</p>}
+      </header>
+      
         {/* remove button when clicked */}
         {hideAddRecipe === false ? (
           <button onClick={() => hideButton()}>Add recipe</button>
