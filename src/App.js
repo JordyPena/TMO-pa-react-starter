@@ -48,13 +48,15 @@ function App() {
       {/* hide no recipes text when recipes exist */}
       {recipes?.length >= 1 ? "" : <p>There are no recipes to list.</p>}
 
-       {/* render my recipes if recipes exist*/}
-       {recipes &&
+      {/* render my recipes if recipes exist*/}
+      {recipes &&
         recipes.map((recipe, idx) => {
           return (
-            <div key={idx}>
-              <p>{recipe.name}</p>
-            </div>
+            <ul key={idx}>
+              <li>
+                {recipe.name}: {recipe.instructions}
+              </li>
+            </ul>
           );
         })}
 
@@ -68,24 +70,29 @@ function App() {
       {/* render form when button is clicked */}
       {showForm === true ? (
         <form className="form-test" onSubmit={(e) => formSubmitted(e)}>
-          Recipe Name:
-          <input
-            type="text"
-            value={recipeName}
-            onChange={(e) => userInput(e)}
-            name="Recipe Name"
-            placeholder="Recipe Name"
-            required
-          />
-          Recipe Instructions:
-          <input
-            type="text"
-            value={recipeInstructions}
-            onChange={(e) => userInput(e)}
-            name="Recipe Instructions"
-            placeholder="Recipe Instructions"
-            required
-          />
+          <label>
+            Recipe Name:
+            <input
+              type="text"
+              value={recipeName}
+              onChange={(e) => userInput(e)}
+              name="Recipe Name"
+              placeholder="Recipe Name"
+              required
+            />
+          </label>
+
+          <label>
+            Recipe Instructions:
+            <input
+              type="text"
+              value={recipeInstructions}
+              onChange={(e) => userInput(e)}
+              name="Recipe Instructions"
+              placeholder="Recipe Instructions"
+              required
+            />
+          </label>
           <button>Submit</button>
         </form>
       ) : (
