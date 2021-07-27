@@ -46,7 +46,7 @@ function App() {
       {/* ^ Do not remove this element ^ */}
       <h1>My Recipes</h1>
       {/* hide no recipes text when recipes exist */}
-      {recipes?.length >= 1 ? "" : <p>There are no recipes to list.</p>}
+      {recipes?.length >= 1 ? "" : <p>There are no recipes to list</p>}
 
       {/* render my recipes if recipes exist*/}
       {recipes &&
