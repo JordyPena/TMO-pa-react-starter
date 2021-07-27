@@ -46,7 +46,7 @@ function App() {
       {/* ^ Do not remove this element ^ */}
       <h1>My Recipes</h1>
       {/* hide no recipes text when recipes exist */}
-      {recipes.length >= 1 ? "" : <h2>There are no recipes to list</h2>}
+      {recipes.length >= 1 ? "" : <p>There are no recipes to list</p>}
       {/* remove button when clicked */}
       {hideAddRecipe === false ? (
         <button onClick={() => hideButton()}>Add recipe</button>
@@ -74,8 +74,9 @@ function App() {
             name="Recipe Name"
             placeholder="Recipe Name"
             required
-          />
-          <p>Recipe Instructions</p>
+          >
+            Recipe Name  
+          </input>
           <input
             type="text"
             value={recipeInstructions}
@@ -83,7 +84,9 @@ function App() {
             name="Recipe Instructions"
             placeholder="Recipe Instructions"
             required
-          />
+          >
+            Recipe Instructions
+          </input>
           <button>Submit</button>
         </form>
       ) : (
