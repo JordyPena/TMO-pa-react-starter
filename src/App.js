@@ -66,7 +66,7 @@ function App() {
       {/* render form when button is clicked */}
       {showForm === true ? (
         <form className="form-test" onSubmit={(e) => formSubmitted(e)}>
-          <p>Recipe Name</p>
+          Recipe Name  
           <input
             type="text"
             value={recipeName}
@@ -74,9 +74,8 @@ function App() {
             name="Recipe Name"
             placeholder="Recipe Name"
             required
-          >
-            Recipe Name  
-          </input>
+            />
+            Recipe Instructions
           <input
             type="text"
             value={recipeInstructions}
@@ -84,9 +83,7 @@ function App() {
             name="Recipe Instructions"
             placeholder="Recipe Instructions"
             required
-          >
-            Recipe Instructions
-          </input>
+          />
           <button>Submit</button>
         </form>
       ) : (
