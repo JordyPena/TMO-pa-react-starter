@@ -46,7 +46,7 @@ function App() {
       {/* ^ Do not remove this element ^ */}
       <h1>My Recipes</h1>
       {/* hide no recipes text when recipes exist */}
-      {recipes.length >= 1 ? "" : <p>There are no recipes to list</p>}
+      {recipes.length >= 1 ? "" : <h2>There are no recipes to list</h2>}
       {/* remove button when clicked */}
       {hideAddRecipe === false ? (
         <button onClick={() => hideButton()}>Add recipe</button>
@@ -66,20 +66,22 @@ function App() {
       {/* render form when button is clicked */}
       {showForm === true ? (
         <form className="form-test" onSubmit={(e) => formSubmitted(e)}>
-          <label>Recipe Name</label>
+          <p>Recipe Name</p>
           <input
             type="text"
             value={recipeName}
             onChange={(e) => userInput(e)}
             name="Recipe Name"
+            placeholder="Recipe Name"
             required
           />
-          <label>Recipe Instructions</label>
+          <p>Recipe Instructions</p>
           <input
             type="text"
             value={recipeInstructions}
             onChange={(e) => userInput(e)}
             name="Recipe Instructions"
+            placeholder="Recipe Instructions"
             required
           />
           <button>Submit</button>
