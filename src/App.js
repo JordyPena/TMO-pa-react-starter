@@ -48,15 +48,8 @@ function App() {
       {/* hide no recipes text when recipes exist */}
       {recipes?.length >= 1 ? "" : <p>There are no recipes to list.</p>}
 
-      {/* remove button when clicked */}
-      {hideAddRecipe === false ? (
-        <button onClick={() => hideButton()}>Add Recipe</button>
-      ) : (
-        ""
-      )}
-
-      {/* render my recipes if recipes exist*/}
-      {recipes?.length >= 1 &&
+       {/* render my recipes if recipes exist*/}
+       {recipes &&
         recipes.map((recipe, idx) => {
           return (
             <div key={idx}>
@@ -64,6 +57,14 @@ function App() {
             </div>
           );
         })}
+
+      {/* remove button when clicked */}
+      {hideAddRecipe === false ? (
+        <button onClick={() => hideButton()}>Add Recipe</button>
+      ) : (
+        ""
+      )}
+
       {/* render form when button is clicked */}
       {showForm === true ? (
         <form className="form-test" onSubmit={(e) => formSubmitted(e)}>
