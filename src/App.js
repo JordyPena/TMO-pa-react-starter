@@ -42,10 +42,12 @@ function App() {
 
   return (
     <div>
-      <h1 className="doNotRemoveMe">Hello world.</h1>
-      {/* ^ Do not remove this element ^ */}
       <header>
-        <h1>My Recipes</h1>
+       <h1 className="doNotRemoveMe">My Recipes.</h1>
+        {/* ^ Do not remove this element ^ */}
+
+      </header>
+
         {/* hide no recipes text when recipes exist */}
         {recipes.length >= 1 ? "" : <p>There are no recipes to list.</p>}
         {/* remove button when clicked */}
@@ -54,7 +56,7 @@ function App() {
         ) : (
           ""
         )}
-      </header>
+    
 
       {/* render my recipes if recipes exist*/}
       {recipes.length >= 1 &&
