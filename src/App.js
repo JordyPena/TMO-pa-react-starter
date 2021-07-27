@@ -42,21 +42,18 @@ function App() {
 
   return (
     <div>
-      
-       <h1 className="doNotRemoveMe">Hello World.</h1>
-        {/* ^ Do not remove this element ^ */}
-        <h1>My Recipes</h1>
-        {/* hide no recipes text when recipes exist */}
-        {recipes?.length >= 1 ? "" : <p>There are no recipes to list.</p>}
-      
+      <h1 className="doNotRemoveMe">Hello World.</h1>
+      {/* ^ Do not remove this element ^ */}
+      <h1>My Recipes</h1>
+      {/* hide no recipes text when recipes exist */}
+      {recipes?.length >= 1 ? "" : <p>There are no recipes to list.</p>}
 
-        {/* remove button when clicked */}
-        {hideAddRecipe === false ? (
-          <button onClick={() => hideButton()}>Add recipe</button>
-        ) : (
-          ""
-        )}
-    
+      {/* remove button when clicked */}
+      {hideAddRecipe === false ? (
+        <button onClick={() => hideButton()}>Add Recipe</button>
+      ) : (
+        ""
+      )}
 
       {/* render my recipes if recipes exist*/}
       {recipes?.length >= 1 &&
@@ -70,7 +67,7 @@ function App() {
       {/* render form when button is clicked */}
       {showForm === true ? (
         <form className="form-test" onSubmit={(e) => formSubmitted(e)}>
-          Recipe Name: 
+          Recipe Name:
           <input
             type="text"
             value={recipeName}
