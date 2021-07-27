@@ -17,9 +17,9 @@ function App() {
   // get recipe name/instructions from userinput
   const userInput = (e) => {
     const { name, value } = e.target;
-    if (name === "name") {
+    if (name === "Recipe Name") {
       setRecipeName(value);
-    } else if (name === "instructions") {
+    } else if (name === "Recipe Instructions") {
       setRecipeInstructions(value);
     }
   };
@@ -45,6 +45,8 @@ function App() {
       <h1 className="doNotRemoveMe">Hello world.</h1>
       {/* ^ Do not remove this element ^ */}
       <h1>My Recipes</h1>
+      {/* hide no recipes text when recipes exist */}
+      {recipes.length >= 1 ? "" : <p>There are no recipes to list</p>}
       {/* remove button when clicked */}
       {hideAddRecipe === false ? (
         <button onClick={() => hideButton()}>Add recipe</button>
@@ -52,8 +54,7 @@ function App() {
         ""
       )}
 
-      {/* render my recipes and hide no recipes text when recipes exist */}
-      {recipes.length >= 1 ? "" : <p>There are no recipes to list</p>}
+      {/* render my recipes if recipes exist*/}
       {recipes.length >= 1 &&
         recipes.map((recipe, idx) => {
           return (
@@ -70,7 +71,7 @@ function App() {
             type="text"
             value={recipeName}
             onChange={(e) => userInput(e)}
-            name="name"
+            name="Recipe Name"
             required
           />
           <label>Recipe Instructions</label>
@@ -78,7 +79,7 @@ function App() {
             type="text"
             value={recipeInstructions}
             onChange={(e) => userInput(e)}
-            name="instructions"
+            name="Recipe Instructions"
             required
           />
           <button>Submit</button>
