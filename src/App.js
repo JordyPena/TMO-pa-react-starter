@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <h1 className="doNotRemoveMe">Hello World.</h1>
+      <h1 className="doNotRemoveMe">Hello world.</h1>
       {/* ^ Do not remove this element ^ */}
       <h1>My Recipes</h1>
       {/* hide no recipes text when recipes exist */}
